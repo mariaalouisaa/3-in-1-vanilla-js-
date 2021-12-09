@@ -1,3 +1,5 @@
+//date and time functionality
+
 function getDate() {
   let now = new Date();
   let day = now.getDay();
@@ -57,3 +59,15 @@ function getTime() {
 
 getTime();
 getDate();
+
+//to do list functionality
+
+const todoInput = document.getElementById("todo-input").value;
+const todoSubmit = document.getElementById("todo-add");
+
+function addItem(event) {
+  event.preventDefault();
+  console.log("clicked");
+}
+
+todoSubmit.addEventListener("click", addItem);

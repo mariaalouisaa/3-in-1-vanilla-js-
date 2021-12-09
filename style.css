@@ -4,6 +4,7 @@
 
 body {
   margin: 0;
+  text-align: center;
 }
 
 .container {
@@ -16,7 +17,6 @@ body {
 .clock-area {
   background-color: rgb(255, 176, 255);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  text-align: center;
 }
 .firstline {
   margin-top: 30px;
@@ -46,7 +46,6 @@ body {
   font-size: 3em;
   font-weight: 500;
   border: black double 5px;
-  text-align: center;
   width: 5.5em;
   margin: 30px auto;
 }
@@ -55,6 +54,44 @@ body {
   background-color: dimgrey;
   grid-column: 2 / 3;
   grid-row: 1 / 3;
+}
+
+.to-do {
+  font-family: "Playfair Display", serif;
+  text-decoration: underline;
+  font-size: 50px;
+}
+
+ul {
+  margin: 20px auto;
+  padding: 0;
+  width: 200px;
+  list-style-type: none;
+}
+
+li {
+  cursor: pointer;
+  padding: 5px;
+  font-size: 18px;
+  transition: 0.2s;
+}
+
+li:nth-child(odd) {
+  background: #756f6f;
+}
+
+li:hover {
+  background: #383737;
+}
+
+.text-input {
+  border-radius: 20px;
+  border: none;
+  padding: 4px 0;
+}
+.add {
+  background-color: transparent;
+  border: none;
 }
 .stopwatch-area {
   background-color: cornflowerblue;
