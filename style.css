@@ -50,12 +50,8 @@ body {
   margin: 30px auto;
 }
 
-.stopwatch-text {
-  font-size: 40px;
-}
-
 .list-area {
-  background-color: dimgrey;
+  background-color: rgb(245, 255, 157);
   grid-column: 2 / 3;
   grid-row: 1 / 3;
 }
@@ -81,11 +77,11 @@ li {
 }
 
 li:nth-child(odd) {
-  background: #756f6f;
+  background: #fceb52;
 }
 
 li:hover {
-  background: #383737;
+  background: #fddb7f;
 }
 
 .text-input {
@@ -99,4 +95,22 @@ li:hover {
 }
 .stopwatch-area {
   background-color: cornflowerblue;
+}
+
+.stopwatch-text {
+  margin-top: 70px;
+  font-size: 50px;
+}
+.stopwatch-area button {
+  background: rgb(79, 255, 226);
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin: 0 10px;
+  font-size: 15px;
+}
+
+.fa-times {
+  font-size: 20px;
 }
