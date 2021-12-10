@@ -89,21 +89,15 @@ reset.onclick = function () {
 
 function startTimer() {
   tens++;
-  if (tens <= 9) {
-    tensText.innerHTML = "0" + tens;
-  }
-  if (tens > 9) {
-    tensText.innerHTML = tens;
-  }
+  if (tens <= 9) tensText.innerHTML = "0" + tens;
+  if (tens > 9) tensText.innerHTML = tens;
   if (tens > 99) {
     seconds++;
     secondsText.innerHTML = "0" + seconds;
     tens = 0;
     tensText.innerHTML = "0" + 0;
   }
-  if (seconds > 9) {
-    secondsText.innerHTML = seconds;
-  }
+  if (seconds > 9) secondsText.innerHTML = seconds;
 }
 
 //to do list functionality
