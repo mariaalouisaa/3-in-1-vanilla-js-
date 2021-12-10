@@ -50,6 +50,10 @@ body {
   margin: 30px auto;
 }
 
+.stopwatch-text {
+  font-size: 40px;
+}
+
 .list-area {
   background-color: dimgrey;
   grid-column: 2 / 3;

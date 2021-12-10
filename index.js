@@ -60,6 +60,8 @@ function getTime() {
 getTime();
 getDate();
 
+// stopwatch functionality
+
 //to do list functionality
 
 const todoInput = document.getElementById("todo-input").value;
