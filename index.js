@@ -61,6 +61,50 @@ getTime();
 getDate();
 
 // stopwatch functionality
+let seconds = 00;
+let tens = 00;
+const secondsText = document.getElementById("secs");
+const tensText = document.getElementById("tens");
+const start = document.getElementById("btn-start");
+const reset = document.getElementById("btn-reset");
+const stop = document.getElementById("btn-stop");
+let Interval;
+
+start.onclick = function () {
+  clearInterval(Interval);
+  Interval = setInterval(startTimer, 10);
+};
+
+stop.onclick = function () {
+  clearInterval(Interval);
+};
+
+reset.onclick = function () {
+  clearInterval(Interval);
+  seconds = 0;
+  tens = 0;
+  secondsText.innerHTML = "0" + seconds;
+  tensText.innerHTML = "0" + tens;
+};
+
+function startTimer() {
+  tens++;
+  if (tens <= 9) {
+    tensText.innerHTML = "0" + tens;
+  }
+  if (tens > 9) {
+    tensText.innerHTML = tens;
+  }
+  if (tens > 99) {
+    seconds++;
+    secondsText.innerHTML = "0" + seconds;
+    tens = 0;
+    tensText.innerHTML = "0" + 0;
+  }
+  if (seconds > 9) {
+    secondsText.innerHTML = seconds;
+  }
+}
 
 //to do list functionality
 
