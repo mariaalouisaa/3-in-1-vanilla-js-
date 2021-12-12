@@ -41,18 +41,15 @@
       <div class="list-area">
         <div class="to-do">To do:</div>
         <div>
-          <ul>
-            <div>
-              <li>
-                one <button class="delete"><i class="fas fa-trash"></i></button>
-              </li>
-            </div>
-            <li>two</li>
-            <li>three</li>
-          </ul>
+          <ul id="todo-list"></ul>
         </div>
         <form>
-          <input type="text" class="text-input" id="todo-input" />
+          <input
+            type="text"
+            class="text-input"
+            id="todo-input"
+            autocomplete="off"
+          />
           <button type="submit" class="add" id="todo-add">+</button>
         </form>
       </div>

@@ -102,12 +102,30 @@ function startTimer() {
 
 //to do list functionality
 
-const todoInput = document.getElementById("todo-input").value;
+const todoInput = document.getElementById("todo-input");
 const todoSubmit = document.getElementById("todo-add");
+const list = document.getElementById("todo-list");
+
+let chores = ["Laundry", "Meal prep", "Workout"];
+
+function showList() {
+  chores.forEach((item) => {
+    let listItem = document.createElement("li");
+    let text = document.createTextNode(item);
+    listItem.appendChild(text);
+    list.appendChild(listItem);
+  });
+}
+
+showList();
 
 function addItem(event) {
   event.preventDefault();
-  console.log("clicked");
+  let listItem = document.createElement("li");
+  let text = document.createTextNode(todoInput.value);
+  listItem.appendChild(text);
+  list.appendChild(listItem);
+  chores.push(todoInput.value);
 }
 
 todoSubmit.addEventListener("click", addItem);
