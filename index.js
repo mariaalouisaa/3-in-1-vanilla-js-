@@ -105,8 +105,12 @@ function startTimer() {
 const todoInput = document.getElementById("todo-input");
 const todoSubmit = document.getElementById("todo-add");
 const list = document.getElementById("todo-list");
+const itemDiv = document.getElementsByClassName("item");
+const clear = document.getElementById("clear-form");
 
-let chores = ["Laundry", "Meal prep", "Workout"];
+let chores = JSON.parse(localStorage.getItem("chores") || []);
+localStorage.setItem("chores", JSON.stringify(chores));
+console.log(chores);
 
 function showList() {
   chores.forEach((item) => {
@@ -126,6 +130,12 @@ function addItem(event) {
   listItem.appendChild(text);
   list.appendChild(listItem);
   chores.push(todoInput.value);
+  localStorage.setItem("chores", JSON.stringify(chores));
 }
+
+clear.onclick = function () {
+  chores = [];
+  localStorage.setItem("chores", JSON.stringify(chores));
+};
 
 todoSubmit.addEventListener("click", addItem);
