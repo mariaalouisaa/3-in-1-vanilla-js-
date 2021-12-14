@@ -65,27 +65,24 @@ let seconds = 00;
 let tens = 00;
 const secondsText = document.getElementById("secs");
 const tensText = document.getElementById("tens");
-const start = document.getElementById("btn-start");
-const reset = document.getElementById("btn-reset");
-const stop = document.getElementById("btn-stop");
 let Interval;
 
-start.onclick = function () {
+function start() {
   clearInterval(Interval);
   Interval = setInterval(startTimer, 10);
-};
+}
 
-stop.onclick = function () {
+function stop() {
   clearInterval(Interval);
-};
+}
 
-reset.onclick = function () {
+function reset() {
   clearInterval(Interval);
   seconds = 0;
   tens = 0;
   secondsText.innerHTML = "0" + seconds;
   tensText.innerHTML = "0" + tens;
-};
+}
 
 function startTimer() {
   tens++;
@@ -105,12 +102,10 @@ function startTimer() {
 const todoInput = document.getElementById("todo-input");
 const todoSubmit = document.getElementById("todo-add");
 const list = document.getElementById("todo-list");
-const itemDiv = document.getElementsByClassName("item");
 const clear = document.getElementById("clear-form");
 
 let chores = JSON.parse(localStorage.getItem("chores") || []);
 localStorage.setItem("chores", JSON.stringify(chores));
-console.log(chores);
 
 function showList() {
   chores.forEach((item) => {
@@ -120,8 +115,6 @@ function showList() {
     list.appendChild(listItem);
   });
 }
-
-showList();
 
 function addItem(event) {
   event.preventDefault();
@@ -139,3 +132,4 @@ clear.onclick = function () {
 };
 
 todoSubmit.addEventListener("click", addItem);
+showList();

@@ -85,6 +85,10 @@ li:hover {
   background: #fddb7f;
 }
 
+.striketrough {
+  text-decoration: line-through;
+}
+
 .text-input {
   border-radius: 20px;
   border: none;
