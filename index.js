@@ -61,40 +61,49 @@ getTime();
 getDate();
 
 // stopwatch functionality
-let seconds = 00;
-let tens = 00;
-const secondsText = document.getElementById("secs");
-const tensText = document.getElementById("tens");
-let Interval;
+let [milliseconds, seconds, minutes] = [0, 0, 0];
+let stopwatchText = document.getElementById("stopwatch-text");
+let int = null;
 
 function start() {
-  clearInterval(Interval);
-  Interval = setInterval(startTimer, 10);
+  if (int !== null) {
+    clearInterval(int);
+  }
+  int = setInterval(startTimer, 10);
 }
 
 function stop() {
-  clearInterval(Interval);
+  clearInterval(int);
 }
 
 function reset() {
-  clearInterval(Interval);
-  seconds = 0;
-  tens = 0;
-  secondsText.innerHTML = "0" + seconds;
-  tensText.innerHTML = "0" + tens;
+  clearInterval(int);
+  [milliseconds, seconds, minutes] = [0, 0, 0];
+  stopwatchText.innerHTML = "00:00:000 ";
 }
 
 function startTimer() {
-  tens++;
-  if (tens <= 9) tensText.innerHTML = "0" + tens;
-  if (tens > 9) tensText.innerHTML = tens;
-  if (tens > 99) {
+  milliseconds += 10;
+
+  if (milliseconds == 1000) {
+    milliseconds = 0;
     seconds++;
-    secondsText.innerHTML = "0" + seconds;
-    tens = 0;
-    tensText.innerHTML = "0" + 0;
+
+    if (seconds == 60) {
+      seconds = 0;
+      minutes++;
+    }
   }
-  if (seconds > 9) secondsText.innerHTML = seconds;
+  let m = minutes < 10 ? "0" + minutes : minutes;
+  let s = seconds < 10 ? "0" + seconds : seconds;
+  let ms =
+    milliseconds < 10
+      ? "00" + milliseconds
+      : milliseconds < 100
+      ? "0" + milliseconds
+      : milliseconds;
+
+  stopwatchText.innerHTML = `${m}:${s}:${ms}`;
 }
 
 //to do list functionality
