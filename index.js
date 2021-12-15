@@ -66,9 +66,7 @@ let stopwatchText = document.getElementById("stopwatch-text");
 let int = null;
 
 function start() {
-  if (int !== null) {
-    clearInterval(int);
-  }
+  if (int !== null) clearInterval(int);
   int = setInterval(startTimer, 10);
 }
 
@@ -108,6 +106,7 @@ const todoInput = document.getElementById("todo-input");
 const todoSubmit = document.getElementById("todo-add");
 const list = document.getElementById("todo-list");
 const clear = document.getElementById("clear-form");
+const li = document.querySelectorAll("li");
 
 let chores = JSON.parse(localStorage.getItem("chores") || []);
 localStorage.setItem("chores", JSON.stringify(chores));
@@ -116,14 +115,22 @@ function showList() {
   chores.forEach((item) => {
     let listItem = document.createElement("li");
     let text = document.createTextNode(item);
+    listItem.onclick = function (e) {
+      e.target.classList.toggle("striketrough");
+    };
     listItem.appendChild(text);
     list.appendChild(listItem);
   });
 }
 
+// forEach((li) => li.classList.toggle("striketrough"));
+
 function addItem(event) {
   event.preventDefault();
   let listItem = document.createElement("li");
+  listItem.onclick = function (e) {
+    e.target.classList.toggle("striketrough");
+  };
   let text = document.createTextNode(todoInput.value);
   listItem.appendChild(text);
   list.appendChild(listItem);
