@@ -23,7 +23,7 @@
   </head>
   <body>
     <div class="container">
-      <div class="clock-area">
+      <div class="clock-area" id="clock-app" ondblclick="fullClock()">
         <div class="firstline">
           <span id="day" class="day"></span>
           <span id="date" class="date"></span><span class="th">th</span>
@@ -32,8 +32,8 @@
         <div id="year" class="year"></div>
         <p class="time" id="time"></p>
       </div>
-      <div class="stopwatch-area">
-        <p>STOPWATCH</p>
+      <div class="stopwatch-area" id="watch-app" ondblclick="fullWatch()">
+        <p class="stopwatch-title">STOPWATCH</p>
         <p class="stopwatch-text" id="stopwatch-text">00:00:000</p>
         <button onclick="start()" class="play">
           <i class="fas fa-play"></i>
@@ -45,7 +45,7 @@
           <i class="fas fa-times"></i>
         </button>
       </div>
-      <div class="list-area">
+      <div class="list-area" id="list-app" ondblclick="fullList()">
         <div class="to-do">To do:</div>
         <form>
           <input

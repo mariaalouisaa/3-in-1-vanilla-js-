@@ -142,3 +142,26 @@ clear.onclick = function () {
 
 todoSubmit.addEventListener("click", addItem);
 showList();
+
+// fullscrean functionality
+const clockapp = document.getElementById("clock-app");
+const watchapp = document.getElementById("watch-app");
+const listapp = document.getElementById("list-app");
+
+function fullClock() {
+  clockapp.classList.toggle("fullscreen");
+  watchapp.classList.toggle("hidden");
+  listapp.classList.toggle("hidden");
+}
+
+function fullWatch() {
+  watchapp.classList.toggle("fullscreen");
+  clockapp.classList.toggle("hidden");
+  listapp.classList.toggle("hidden");
+}
+
+function fullList() {
+  listapp.classList.toggle("fullscreen");
+  watchapp.classList.toggle("hidden");
+  clockapp.classList.toggle("hidden");
+}

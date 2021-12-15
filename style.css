@@ -103,9 +103,9 @@ li:hover {
   font-family: "Roboto", sans-serif;
 }
 
-.stopwatch-text {
-  font-size: 50px;
-  margin: 0;
+.stopwatch-area p {
+  font-size: 3em;
+  margin: 0.5em auto;
   color: antiquewhite;
 }
 .stopwatch-area button {
@@ -120,4 +120,16 @@ li:hover {
 
 .fa-times {
   font-size: 20px;
+}
+
+.fullscreen {
+  position: absolute;
+  width: 100vw;
+  min-width: 100vw;
+  max-height: 100vh;
+  min-height: 100vh;
+}
+
+.hidden {
+  visibility: hidden;
 }
