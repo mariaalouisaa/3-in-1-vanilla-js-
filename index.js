@@ -127,15 +127,17 @@ function showList() {
 
 function addItem(event) {
   event.preventDefault();
-  let listItem = document.createElement("li");
-  listItem.onclick = function (e) {
-    e.target.classList.toggle("striketrough");
-  };
-  let text = document.createTextNode(todoInput.value);
-  listItem.appendChild(text);
-  list.appendChild(listItem);
-  chores.push(todoInput.value);
-  localStorage.setItem("chores", JSON.stringify(chores));
+  if (todoInput.value.trim().length > 0) {
+    let listItem = document.createElement("li");
+    listItem.onclick = function (e) {
+      e.target.classList.toggle("striketrough");
+    };
+    let text = document.createTextNode(todoInput.value);
+    listItem.appendChild(text);
+    list.appendChild(listItem);
+    chores.push(todoInput.value);
+    localStorage.setItem("chores", JSON.stringify(chores));
+  }
 }
 
 clear.onclick = function () {
