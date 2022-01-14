@@ -1,1 +1,0 @@
-Three apps in one! A calander showing live date a time, a fully functioning stopwatch and a To-Do list 
