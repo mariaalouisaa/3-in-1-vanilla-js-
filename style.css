@@ -91,6 +91,12 @@ li:hover {
   text-decoration: line-through;
 }
 
+.delete-button {
+  background: none;
+  border: none;
+  float: right;
+}
+
 .text-input {
   border-radius: 20px;
   border: none;
