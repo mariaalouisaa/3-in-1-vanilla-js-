@@ -135,7 +135,7 @@ function addItem(event) {
   if (todoInput.value.trim().length > 0) {
     let listItem = document.createElement("li");
     let text = document.createTextNode(todoInput.value);
-    text.onclick = function (e) {
+    listItem.onclick = function (e) {
       e.target.classList.toggle("striketrough");
     };
     let button = document.createElement("button");
