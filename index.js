@@ -117,8 +117,7 @@ function showList() {
     let text = document.createTextNode(item);
     let button = document.createElement("button");
     button.classList.add("delete-button");
-
-    button.innerHTML = "X";
+    button.innerHTML = `<i class="fas fa-trash"></i>`;
     listItem.onclick = function (e) {
       e.target.classList.toggle("striketrough");
     };
