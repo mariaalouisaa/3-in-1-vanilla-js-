@@ -6,3 +6,5 @@
 3. To-do list
 
 These apps showcase the use of DOM manipulation, creating elements in JS, use of localStorage and much more!
+
+Hosted on [GitHub Pages](https://mariaalouisaa.github.io/3-in-1-vanilla-js-/)
