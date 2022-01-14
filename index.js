@@ -117,8 +117,8 @@ function showList() {
     let text = document.createTextNode(item);
     let button = document.createElement("button");
     button.classList.add("delete-button");
-
-    button.innerHTML = "X";
+    button.innerHTML = `<i class="fas fa-trash"></i>`;
+    button.addEventListener("click", deleteListItem);
     listItem.onclick = function (e) {
       e.target.classList.toggle("striketrough");
     };
@@ -135,18 +135,26 @@ function addItem(event) {
   if (todoInput.value.trim().length > 0) {
     let listItem = document.createElement("li");
     let text = document.createTextNode(todoInput.value);
-    text.onclick = function (e) {
+    listItem.onclick = function (e) {
       e.target.classList.toggle("striketrough");
     };
     let button = document.createElement("button");
+    button.addEventListener("click", deleteListItem);
     button.classList.add("delete-button");
-    button.innerHTML = "X";
+    button.innerHTML = `<i class="fas fa-trash"></i>`;
     listItem.appendChild(text);
     listItem.appendChild(button);
     list.appendChild(listItem);
     chores.push(todoInput.value);
     localStorage.setItem("chores", JSON.stringify(chores));
   }
+}
+
+function deleteListItem() {
+  this.parentElement.remove();
+  let choresIndex = chores.indexOf(this.parentElement.innerText);
+  chores.splice(choresIndex, 1);
+  localStorage.setItem("chores", JSON.stringify(chores));
 }
 
 clear.onclick = function () {
