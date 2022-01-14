@@ -115,10 +115,15 @@ function showList() {
   chores.forEach((item) => {
     let listItem = document.createElement("li");
     let text = document.createTextNode(item);
+    let button = document.createElement("button");
+    button.classList.add("delete-button");
+
+    button.innerHTML = "X";
     listItem.onclick = function (e) {
       e.target.classList.toggle("striketrough");
     };
     listItem.appendChild(text);
+    listItem.appendChild(button);
     list.appendChild(listItem);
   });
 }
@@ -129,11 +134,15 @@ function addItem(event) {
   event.preventDefault();
   if (todoInput.value.trim().length > 0) {
     let listItem = document.createElement("li");
-    listItem.onclick = function (e) {
+    let text = document.createTextNode(todoInput.value);
+    text.onclick = function (e) {
       e.target.classList.toggle("striketrough");
     };
-    let text = document.createTextNode(todoInput.value);
+    let button = document.createElement("button");
+    button.classList.add("delete-button");
+    button.innerHTML = "X";
     listItem.appendChild(text);
+    listItem.appendChild(button);
     list.appendChild(listItem);
     chores.push(todoInput.value);
     localStorage.setItem("chores", JSON.stringify(chores));
