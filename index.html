@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Corinthia:wght@700&family=Playfair+Display:wght@500&family=Rubik&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Corinthia:wght@700&=swap"
       rel="stylesheet"
     />
     <link
@@ -32,18 +32,20 @@
         <div id="year" class="year"></div>
         <p class="time" id="time"></p>
       </div>
-      <div class="stopwatch-area" id="watch-app" ondblclick="fullWatch()">
-        <p class="stopwatch-title">STOPWATCH</p>
-        <p class="stopwatch-text" id="stopwatch-text">00:00:00</p>
-        <button onclick="start()" class="play">
-          <i class="fas fa-play"></i>
-        </button>
-        <button onclick="stop()" class="stop">
-          <i class="fas fa-pause"></i>
-        </button>
-        <button onclick="reset()" class="reset">
-          <i class="fas fa-times"></i>
-        </button>
+      <div id="watch-app" ondblclick="fullWatch()">
+        <div class="stopwatch-area">
+          <p class="stopwatch-title">STOPWATCH</p>
+          <p class="stopwatch-text" id="stopwatch-text">00:00:00</p>
+          <button onclick="start()" class="play">
+            <i class="fas fa-play"></i>
+          </button>
+          <button onclick="stop()" class="stop">
+            <i class="fas fa-pause"></i>
+          </button>
+          <button onclick="reset()" class="reset">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
       </div>
       <div class="list-area" id="list-app" ondblclick="fullList()">
         <div class="to-do">To do:</div>
