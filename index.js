@@ -108,7 +108,7 @@ const list = document.getElementById("todo-list");
 const clear = document.getElementById("clear-form");
 const li = document.querySelectorAll("li");
 
-let chores = JSON.parse(localStorage.getItem("chores") || []);
+let chores = JSON.parse(localStorage.getItem("chores"));
 localStorage.setItem("chores", JSON.stringify(chores));
 
 function showList() {
@@ -118,7 +118,7 @@ function showList() {
     let button = document.createElement("button");
     button.classList.add("delete-button");
     button.innerHTML = `<i class="fas fa-trash"></i>`;
-    button.addEventListener("click", deleteListItem);
+    //button.addEventListener("click", deleteListItem);
     listItem.onclick = function (e) {
       e.target.classList.toggle("striketrough");
     };
@@ -135,7 +135,7 @@ function addItem(event) {
   if (todoInput.value.trim().length > 0) {
     let listItem = document.createElement("li");
     let text = document.createTextNode(todoInput.value);
-    listItem.onclick = function (e) {
+    text.onclick = function (e) {
       e.target.classList.toggle("striketrough");
     };
     let button = document.createElement("button");

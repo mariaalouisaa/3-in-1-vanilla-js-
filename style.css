@@ -1,10 +1,9 @@
-.fonts {
-  font-family: "Playfair Display", serif;
-}
-
+/*  whole app */
 body {
   margin: 0;
   text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: #1bbce9;
 }
 
 .container {
@@ -14,12 +13,15 @@ body {
   height: 100vh;
 }
 
+/* Calender */
 .clock-area {
-  background-color: rgb(216, 216, 216);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  justify-content: center;
-  align-content: center;
+  background-color: whitesmoke;
+  margin: 2em auto;
+  padding: 0.5em;
+  border: 8px double rgb(47, 54, 54);
+  max-width: 20em;
 }
+
 .firstline {
   margin-top: 30px;
 }
@@ -38,7 +40,6 @@ body {
 }
 
 .year {
-  font-family: "Bebas Neue", cursive;
   font-weight: 600;
   font-size: smaller;
   margin-top: 5px;
@@ -47,22 +48,26 @@ body {
 .time {
   font-size: 3em;
   font-weight: 500;
-  border: black double 5px;
-  width: 5.5em;
+  background-color: rgb(47, 54, 54);
+  border-radius: 20px;
+  color: whitesmoke;
   margin: 30px auto;
+  max-width: 6em;
 }
 
 .list-area {
-  background-color: rgb(245, 255, 157);
   grid-column: 2 / 3;
   grid-row: 1 / 3;
+  background-color: whitesmoke;
+  margin: 2em auto;
+  border-radius: 20px;
+  width: 18em;
 }
 
 .to-do {
-  font-family: "Playfair Display", serif;
   text-decoration: underline;
   font-size: 50px;
-  padding-bottom: 15px;
+  line-height: 90px;
 }
 
 ul {
@@ -79,13 +84,19 @@ li {
   transition: 0.2s;
   padding-left: 20px;
 }
+li:last-child {
+  border-radius: 0 0 20px 20px;
+}
+li:first-child {
+  border-radius: 20px 20px 0 0;
+}
 
 li:nth-child(odd) {
-  background: #fceb52;
+  background: #7a7a7a33;
 }
 
 li:hover {
-  background: #fddb7f;
+  background: #1bbce963;
 }
 
 .striketrough {
@@ -101,26 +112,51 @@ li:hover {
 
 .text-input {
   border-radius: 20px;
-  border: none;
+  border: 2px solid black;
   padding: 4px 0;
 }
 .add {
   background-color: transparent;
   border: none;
-}
-.stopwatch-area {
-  background-color: rgb(66, 66, 66);
-  font-family: "Roboto", sans-serif;
+  font-size: 1.5em;
 }
 
-.stopwatch-area p {
-  font-size: 3em;
-  margin: 0.5em auto;
-  color: antiquewhite;
+.clear {
+  text-decoration: none;
+  color: rgb(235, 44, 44);
+  font-weight: 600;
 }
+.clear:hover {
+  font-size: 18px;
+}
+
+/* STOPWATCH */
+.stopwatch-area {
+  border: #1bbce9 3px solid;
+  background: whitesmoke;
+  border-radius: 0 30px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 2em 0;
+}
+
+.stopwatch-title {
+  font-size: 1em;
+  margin: 0.5em auto;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.stopwatch-text {
+  font-size: 2.5em;
+  font-weight: 700;
+  margin: 0.5em auto;
+}
+
 .stopwatch-area button {
-  background: rgb(255, 255, 255);
-  border: none;
+  border: whitesmoke 2px solid;
+  background-color: #864ff2;
+  color: whitesmoke;
   width: 45px;
   height: 45px;
   border-radius: 50%;
@@ -128,13 +164,19 @@ li:hover {
   font-size: 15px;
 }
 
+.stopwatch-area button:hover {
+  border: crimson 3px solid;
+}
+
 .fa-times {
   font-size: 20px;
 }
 
+/* Full screen */
+
 .fullscreen {
   position: absolute;
-  width: 100vw;
+  max-width: 100vw;
   min-width: 100vw;
   max-height: 100vh;
   min-height: 100vh;
