@@ -23,14 +23,16 @@
   </head>
   <body>
     <div class="container">
-      <div class="clock-area" id="clock-app" ondblclick="fullClock()">
-        <div class="firstline">
-          <span id="day" class="day"></span>
-          <span id="date" class="date"></span><span class="th">th</span>
+      <div id="clock-app" ondblclick="fullClock()">
+        <div class="clock-area">
+          <div class="firstline">
+            <span id="day" class="day"></span>
+            <span id="date" class="date"></span><span class="th">th</span>
+          </div>
+          <div id="month" class="month"></div>
+          <div id="year" class="year"></div>
+          <p class="time" id="time"></p>
         </div>
-        <div id="month" class="month"></div>
-        <div id="year" class="year"></div>
-        <p class="time" id="time"></p>
       </div>
       <div id="watch-app" ondblclick="fullWatch()">
         <div class="stopwatch-area">
