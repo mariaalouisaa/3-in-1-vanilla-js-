@@ -5,6 +5,7 @@
 body {
   margin: 0;
   text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .container {
@@ -15,8 +16,6 @@ body {
 }
 
 .clock-area {
-  background-color: rgb(216, 216, 216);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   justify-content: center;
   align-content: center;
 }
@@ -59,7 +58,6 @@ body {
 }
 
 .to-do {
-  font-family: "Playfair Display", serif;
   text-decoration: underline;
   font-size: 50px;
   padding-bottom: 15px;
