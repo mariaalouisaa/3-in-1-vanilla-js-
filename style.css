@@ -1,16 +1,44 @@
 /*  whole app */
 body {
-  margin: 0;
   text-align: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background: #1bbce9;
+  font-family: sans-serif;
+  background: rgb(36, 36, 36);
+  overflow: hidden;
 }
 
-.container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  height: 100vh;
+.popup {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  min-width: 30em;
+}
+
+/* Home Page */
+.home {
+  color: whitesmoke;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 28em;
+}
+
+.home > button {
+  height: 7em;
+  width: 7em;
+  margin: 1em;
+  border-radius: 50%;
+  border: 0.5em solid rgba(66, 66, 66, 0.945);
+  transition: transform 0.2s;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+
+.home > button:hover {
+  transform: scale(1.2);
 }
 
 /* Calender */
@@ -19,7 +47,6 @@ body {
   margin: 2em auto;
   padding: 0.5em;
   border: 8px double rgb(47, 54, 54);
-  max-width: 20em;
 }
 
 .firstline {
@@ -55,15 +82,14 @@ body {
   max-width: 6em;
 }
 
+/*todo app*/
+
 .list-area {
-  grid-column: 2 / 3;
-  grid-row: 1 / 3;
   background-color: whitesmoke;
   margin: 2em auto;
   border-radius: 20px;
-  width: 18em;
+  min-height: 20em;
 }
-
 .to-do {
   text-decoration: underline;
   font-size: 50px;
@@ -132,10 +158,8 @@ li:hover {
 
 /* STOPWATCH */
 .stopwatch-area {
-  border: #1bbce9 3px solid;
   background: whitesmoke;
-  border-radius: 0 30px;
-  width: 80%;
+  border-radius: 30px;
   margin: 0 auto;
   padding: 2em 0;
 }
@@ -172,15 +196,7 @@ li:hover {
   font-size: 20px;
 }
 
-/* Full screen */
-
-.fullscreen {
-  position: absolute;
-  max-width: 100vw;
-  min-width: 100vw;
-  max-height: 100vh;
-  min-height: 100vh;
-}
+/* Visibility */
 
 .hidden {
   visibility: hidden;
