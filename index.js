@@ -173,3 +173,11 @@ function fullscreen(props) {
   if (props === "list") listapp.classList.remove("hidden");
   if (props === "watch") watchapp.classList.remove("hidden");
 }
+
+// Home button
+
+function homepage() {
+  clockapp.classList.add("hidden");
+  listapp.classList.add("hidden");
+  watchapp.classList.add("hidden");
+}
