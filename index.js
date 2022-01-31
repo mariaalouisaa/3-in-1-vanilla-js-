@@ -118,7 +118,7 @@ function showList() {
     let button = document.createElement("button");
     button.classList.add("delete-button");
     button.innerHTML = `<i class="fas fa-trash"></i>`;
-    //button.addEventListener("click", deleteListItem);
+    button.addEventListener("click", deleteListItem);
     listItem.onclick = function (e) {
       e.target.classList.toggle("striketrough");
     };
@@ -128,14 +128,12 @@ function showList() {
   });
 }
 
-// forEach((li) => li.classList.toggle("striketrough"));
-
 function addItem(event) {
   event.preventDefault();
   if (todoInput.value.trim().length > 0) {
     let listItem = document.createElement("li");
     let text = document.createTextNode(todoInput.value);
-    text.onclick = function (e) {
+    listItem.onclick = function (e) {
       e.target.classList.toggle("striketrough");
     };
     let button = document.createElement("button");
