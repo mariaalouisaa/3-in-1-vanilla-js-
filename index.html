@@ -22,49 +22,52 @@
     ></script>
   </head>
   <body>
-    <div class="container">
-      <div id="clock-app" ondblclick="fullClock()">
-        <div class="clock-area">
-          <div class="firstline">
-            <span id="day" class="day"></span>
-            <span id="date" class="date"></span><span class="th">th</span>
-          </div>
-          <div id="month" class="month"></div>
-          <div id="year" class="year"></div>
-          <p class="time" id="time"></p>
+    <div class="home">
+      <button onclick="fullscreen('date')">Time + Date</button>
+      <button onclick="fullscreen('list')">To-do List</button>
+      <button onclick="fullscreen('watch')">Stop- watch</button>
+    </div>
+    <div id="clock-app" class="hidden popup">
+      <div class="clock-area">
+        <div class="firstline">
+          <span id="day" class="day"></span>
+          <span id="date" class="date"></span><span class="th">th</span>
         </div>
+        <div id="month" class="month"></div>
+        <div id="year" class="year"></div>
+        <p class="time" id="time"></p>
       </div>
-      <div id="watch-app" ondblclick="fullWatch()">
-        <div class="stopwatch-area">
-          <p class="stopwatch-title">STOPWATCH</p>
-          <p class="stopwatch-text" id="stopwatch-text">00:00:00</p>
-          <button onclick="start()" class="play">
-            <i class="fas fa-play"></i>
-          </button>
-          <button onclick="stop()" class="stop">
-            <i class="fas fa-pause"></i>
-          </button>
-          <button onclick="reset()" class="reset">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
+    </div>
+    <div id="watch-app" class="hidden popup">
+      <div class="stopwatch-area">
+        <p class="stopwatch-title">STOPWATCH</p>
+        <p class="stopwatch-text" id="stopwatch-text">00:00:00</p>
+        <button onclick="start()" class="play">
+          <i class="fas fa-play"></i>
+        </button>
+        <button onclick="stop()" class="stop">
+          <i class="fas fa-pause"></i>
+        </button>
+        <button onclick="reset()" class="reset">
+          <i class="fas fa-times"></i>
+        </button>
       </div>
-      <div class="list-area" id="list-app" ondblclick="fullList()">
-        <div class="to-do">To do:</div>
-        <form>
-          <input
-            type="text"
-            class="text-input"
-            id="todo-input"
-            autocomplete="off"
-          />
-          <button type="submit" class="add" id="todo-add">+</button>
-        </form>
-        <div>
-          <ul id="todo-list"></ul>
-        </div>
-        <a href="/" class="clear" id="clear-form">CLEAR</a>
+    </div>
+    <div class="list-area hidden popup" id="list-app">
+      <div class="to-do">To do:</div>
+      <form>
+        <input
+          type="text"
+          class="text-input"
+          id="todo-input"
+          autocomplete="off"
+        />
+        <button type="submit" class="add" id="todo-add">+</button>
+      </form>
+      <div>
+        <ul id="todo-list"></ul>
       </div>
+      <a href="/" class="clear" id="clear-form">CLEAR</a>
     </div>
     <script src="./index.js"></script>
   </body>
