@@ -146,6 +146,7 @@ function addItem(event) {
     chores.push(todoInput.value);
     localStorage.setItem("chores", JSON.stringify(chores));
   }
+  console.log(chores);
 }
 
 function deleteListItem() {
@@ -155,10 +156,11 @@ function deleteListItem() {
   localStorage.setItem("chores", JSON.stringify(chores));
 }
 
-clear.onclick = function () {
+function clearList() {
   chores = [];
   localStorage.setItem("chores", JSON.stringify(chores));
-};
+  list.innerHTML = "";
+}
 
 todoSubmit.addEventListener("click", addItem);
 showList();
