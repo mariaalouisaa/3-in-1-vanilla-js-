@@ -1,3 +1,13 @@
+// visibility functionality
+let clockapp = document.getElementById("clock-app");
+let watchapp = document.getElementById("watch-app");
+let listapp = document.getElementById("list-app");
+
+function fullscreen(props) {
+  if (props === "date") clockapp.classList.remove("hidden");
+  if (props === "list") listapp.classList.remove("hidden");
+  if (props === "watch") watchapp.classList.remove("hidden");
+}
 //date and time functionality
 
 function getDate() {
@@ -164,17 +174,6 @@ function clearList() {
 
 todoSubmit.addEventListener("click", addItem);
 showList();
-
-// visibility functionality
-const clockapp = document.getElementById("clock-app");
-const watchapp = document.getElementById("watch-app");
-const listapp = document.getElementById("list-app");
-
-function fullscreen(props) {
-  if (props === "date") clockapp.classList.remove("hidden");
-  if (props === "list") listapp.classList.remove("hidden");
-  if (props === "watch") watchapp.classList.remove("hidden");
-}
 
 // Home button
 
