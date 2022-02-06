@@ -102,9 +102,9 @@ body {
 
 .list-area {
   background-color: whitesmoke;
-  margin: 2em auto;
   border-radius: 20px;
   min-height: 20em;
+  min-height: 90vh;
 }
 .to-do {
   text-decoration: underline;
@@ -164,7 +164,8 @@ li:hover {
 }
 
 .clear {
-  text-decoration: none;
+  background-color: transparent;
+  border: none;
   color: rgb(235, 44, 44);
   font-weight: 600;
 }
