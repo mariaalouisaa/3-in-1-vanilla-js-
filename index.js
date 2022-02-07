@@ -118,7 +118,7 @@ const list = document.getElementById("todo-list");
 const clear = document.getElementById("clear-form");
 const li = document.querySelectorAll("li");
 
-let chores = JSON.parse(localStorage.getItem("chores"));
+let chores = JSON.parse(localStorage.getItem("chores") || []);
 localStorage.setItem("chores", JSON.stringify(chores));
 
 function showList() {
