@@ -118,7 +118,7 @@ const list = document.getElementById("todo-list");
 const clear = document.getElementById("clear-form");
 const li = document.querySelectorAll("li");
 
-let chores = JSON.parse(localStorage.getItem("chores"));
+let chores = JSON.parse(localStorage.getItem("chores") || []);
 localStorage.setItem("chores", JSON.stringify(chores));
 
 function showList() {
@@ -156,7 +156,6 @@ function addItem(event) {
     chores.push(todoInput.value);
     localStorage.setItem("chores", JSON.stringify(chores));
   }
-  console.log(chores);
 }
 
 function deleteListItem() {
@@ -173,7 +172,10 @@ function clearList() {
 }
 
 todoSubmit.addEventListener("click", addItem);
-showList();
+
+if (chores.length > 0) {
+  showList();
+}
 
 // Home button
 
