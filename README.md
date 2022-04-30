@@ -27,7 +27,7 @@
 - [ ] Make site responsive
 
 
-**Extra notes:** I'm am now making another version of this in React [(check it out here soon)](https://github.com/mariaalouisaa/3-in-1-reacts) and am really enjoying how differnct the code is between the two versions!
+**Extra notes:** I'm am now making another version of this in React [(check it out here soon)](https://github.com/mariaalouisaa/3-in-1-react) and am really enjoying how differnct the code is between the two versions!
 
 *App designed, coded and maintained entirely by myself!*
 
